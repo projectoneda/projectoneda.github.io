@@ -15,14 +15,28 @@ import pandas as pd
 #    for row in reader:
 #        print(row)
 
-stocks_df = pd.read_csv('./Valuation_Guides/Valuation_Templates/Sample_Data.csv', index_col = 'Company')
-
-stocks_df.head(2)
-
-
 # 1/12/19 - Using sample/dummy data to begin calculations
 # Will pull data once webscraping is complete
+# Read csv file into pandas data frame
+stocks_df = pd.read_csv('./Valuation_Guides/Valuation_Templates/Sample_Data.csv', 
+                          index_col = 0)
 
+# check - print to check dataframe was created correctly
+print(stocks_df.head())
+
+# print df column names
+print(stocks_df.columns)
+
+#------------------------------------------------
+# P/E RATIO SUMMARY
+#------------------------------------------------
+# average P/E TTM
+pe_mean = stocks_df['PE TTM'].mean()
+print(pe_mean)
+
+# median P/E TTM
+pe_med = stocks_df['PE TTM'].median()
+print(pe_med)
 
 
 # Convert data to pandas dataframe
