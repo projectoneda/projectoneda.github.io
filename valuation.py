@@ -9,6 +9,49 @@ import os
 import csv
 import numpy as np
 import pandas as pd
+from splinter import Browser
+from bs4 import BeautifulSoup as bs
+import requests
+import shutil
+from html.parser import HTMLParser
+
+#------------------------------------------------
+# IMPORT STOCK DATA FROM SCRAPE.PY FILE
+#------------------------------------------------
+from stock_scrape import gs,jp,bac,ubs,wf,soup
+
+#test1 = bs(gs[0])
+test1 = str(gs[0])
+print(test1)
+
+fin_data = ['Price',
+            'Day Range',
+            '52W_Range',
+            'Volume',
+            'Average Volume',
+            'Market Cap',
+            'PE Ratio',
+            'Dividend Yield',
+            'Beta']
+
+# Create empty lists for financial data
+Price = []
+Day_Rng =[]
+Yr_Rng = []
+Vol = []
+Avg_Vol = []
+Market_Cap = []
+PE_Ratio = []
+Div_Yield = []
+Beta = []
+
+for x in gs:
+    data = bs(str(x))
+    Price.append(data)
+    
+soup1 = bs(test1)
+#soup1 = bs ('<strong>$176.93</strong>')
+print(soup1.get_text())
 
 #with open ('./Valuation_Guides/Valuation_Templates/Sample_Data.csv', newline='', encoding = 'utf-8') as csvfile:
 #    reader = csv.reader(csvfile)

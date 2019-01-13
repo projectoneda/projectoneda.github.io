@@ -2,9 +2,13 @@ from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import requests
 import shutil
+import re
 
 executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
 browser = Browser("chrome", **executable_path, headless=False)
+
+# Create empty dictionary to hold data - stock tickers will be used as keys
+tickers = []
 
 # Goldman Sachs
 
@@ -19,6 +23,12 @@ gs  = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
 print(gs_title)
 print(gs)
 
+# Pull stock ticker from title string
+tick = (gs_title.split(':')[1])[0:3]
+
+# Append ticker to list and strip blanks
+tickers.append(tick.strip())
+print(tickers)
 
 # JP Morgan Chase
 
