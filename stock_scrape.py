@@ -67,8 +67,8 @@ gs_nt.insert(0,gs_name.strip())
 print(gs_name)
 
 # Zip fin_data list with stock data
-gs_zip = list(zip(fin_data,gs_nt))
-print(gs_zip)
+#gs_zip = list(zip(fin_data,gs_nt))
+#print(gs_zip)
 
 print(gs_title)
 print(gs)
@@ -76,11 +76,11 @@ print(gs_nt)
 
 # Pull stock ticker from title string and strip blank spaces
 tick = (gs_title.split(':')[1])[0:3]
-tick.strip()
+tick = tick.strip()
 print(tick)
 
 # Add stock data to stock_dict with ticker as key and data as value
-stock_dict[tick] = gs_zip
+stock_dict[tick] = gs_nt
 print(stock_dict)
 
 #----------------------------------------------------------------------
@@ -118,15 +118,15 @@ print(jp_name)
 jp_nt.insert(0,jp_name.strip())
 print(jp_nt)
 
-# Zip fin_data list with stock data
-jp_zip = list(zip(fin_data,jp_nt))
+## Zip fin_data list with stock data
+#jp_zip = list(zip(fin_data,jp_nt))
 
 # Pull stock ticker from title string and strip blank spaces
 tick = (jp_title.split(':')[1])[0:3]
 tick.strip()
 
 # Add stock data to stock_dict with ticker as key and data as value
-stock_dict[tick] = jp_zip
+stock_dict[tick] = jp_nt
 print(stock_dict)
 
 #----------------------------------------------------------------------
@@ -162,15 +162,15 @@ for data in bac:
 bac_name = re.split(r'\bStock\b|:|- ',bac_title)[2]
 bac_nt.insert(0,bac_name.strip())
 
-# Zip fin_data list with stock data
-bac_zip = list(zip(fin_data,bac_nt))
+## Zip fin_data list with stock data
+#bac_zip = list(zip(fin_data,bac_nt))
 
 # Pull stock ticker from title string and strip blank spaces
 tick = (bac_title.split(':')[1])[0:3]
 tick.strip()
 
 # Add stock data to stock_dict with ticker as key and data as value
-stock_dict[tick] = bac_zip
+stock_dict[tick] = bac_nt
 print(stock_dict)
 
 #----------------------------------------------------------------------
@@ -208,15 +208,15 @@ for data in ubs:
 ubs_name = re.split(r'\bStock\b|:|- ',ubs_title)[2]
 ubs_nt.insert(0,ubs_name.strip())
 
-# Zip fin_data list with stock data
-ubs_zip = list(zip(fin_data,ubs_nt))
+## Zip fin_data list with stock data
+#ubs_zip = list(zip(fin_data,ubs_nt))
 
 # Pull stock ticker from title string and strip blank spaces
 tick = (ubs_title.split(':')[1])[0:3]
 tick.strip()
 
 # Add stock data to stock_dict with ticker as key and data as value
-stock_dict[tick] = ubs_zip
+stock_dict[tick] = ubs_nt
 print(stock_dict)
 
 #----------------------------------------------------------------------
@@ -254,14 +254,14 @@ for data in wf:
 wf_name = re.split(r'\bStock\b|:|- ',wf_title)[2]
 wf_nt.insert(0,wf_name.strip())
 
-# Zip fin_data list with stock data
-wf_zip = list(zip(fin_data,wf_nt))
+## Zip fin_data list with stock data
+#wf_zip = list(zip(fin_data,wf_nt))
 
 # Pull stock ticker from title string and strip blank spaces
 tick = (wf_title.split(':')[1])[0:3]
 tick.strip()
 
 # Add stock data to stock_dict with ticker as key and data as value
-stock_dict[tick] = wf_zip
+stock_dict[tick] = wf_nt
 print(stock_dict)
 
