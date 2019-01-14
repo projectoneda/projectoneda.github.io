@@ -214,6 +214,7 @@ footer{
 @media(max-width: 768px){
     header #branding,
     header nav,
+    .col,
     header nav li,
     #newsletter h1,
     #newsletter form,
