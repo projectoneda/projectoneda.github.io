@@ -8,8 +8,18 @@ executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
 browser = Browser("chrome", **executable_path, headless=False)
 
 # Create empty dictionary to hold data - stock tickers will be used as keys
-tickers = []
 stock_dict = {}
+
+# Create list which contains headings for financial data to be scraped
+fin_data = ['Price',
+            'Day Range',
+            '52W_Range',
+            'Volume',
+            'Average Volume',
+            'Market Cap',
+            'PE Ratio',
+            'Dividend Yield',
+            'Beta']
 
 #----------------------------------------------------------------------
 # Goldman Sachs
@@ -21,10 +31,15 @@ html = browser.html
 soup = bs(html, 'html.parser')
 gs_title = soup.find("h1", class_="PageTitleHOne").text
 gs  = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
+print(gs_title)
 
-# Strip html tag (<strong>) from list produced in "find_all" function above
+#------------------------------------------------------------------------------------
+# THE STEPS BELOW WILL BE REPEATED FOR ALL STOCKS (PRINT STATEMENTS WILL BE REMOVED)
+# WE CAN RE-VISIT LATER ON AND CREATE FOR LOOP TO SCRAPE AND CLEAN ALL DATA
+#------------------------------------------------------------------------------------
+# Loop through LIST produced in Beautiful Soup "find_all" function above and strip html tags (<strong>)
 
-# Empty list to hold new array with stripped tags
+# Empty list to hold financial data with stripped tags
 gs_nt =[]
 
 for data in gs:
@@ -45,19 +60,25 @@ for data in gs:
     gs_nt.append(data_text)
     print(gs_nt)
 
+# Zip fin_data list with stock data
+gs_zip = list(zip(fin_data,gs_nt))
+print(gs_zip)
+
 print(gs_title)
 print(gs)
 print(gs_nt)
 
-# Pull stock ticker from title string
+# Pull stock ticker from title string and strip blank spaces
 tick = (gs_title.split(':')[1])[0:3]
+tick.strip()
+print(tick)
 
 # Strip blank spaces from ticker and append ticker to "tickers" list
-tickers.append(tick.strip())
-print(tickers)
+#tickers.append(tick.strip())
+#print(tickers)
 
-# Add ticker as key and data as value to dictionary
-stock_dict[tick] = gs_nt
+# Add stock data to stock_dict with ticker as key and data as value
+stock_dict[tick] = gs_zip
 print(stock_dict)
 
 #----------------------------------------------------------------------
@@ -71,14 +92,37 @@ soup = bs(html, 'html.parser')
 jp_title = soup.find("h1", class_="PageTitleHOne").text
 jp  = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
 
-print(jp_title)
-print(jp)
+# Empty list to hold financial data with stripped tags
+jp_nt =[]
 
+for data in jp:
+    
+    # Pull list elements 1 by 1 and put into string
+    data_str = str(data)
+    
+    # Put element string into beautiful soup object
+    b_soup = bs(data_str)
+    
+    # Strip html tag from list elements
+    data_text = b_soup.get_text()
+    
+    # Add data to list
+    jp_nt.append(data_text)
+
+# Zip fin_data list with stock data
+jp_zip = list(zip(fin_data,jp_nt))
+
+# Pull stock ticker from title string and strip blank spaces
 tick = (jp_title.split(':')[1])[0:3]
-tickers.append(tick.strip())
-print(tickers)
+tick.strip()
 
+# Add stock data to stock_dict with ticker as key and data as value
+stock_dict[tick] = jp_zip
+print(stock_dict)
+
+#----------------------------------------------------------------------
 # Bank of America
+#----------------------------------------------------------------------
 
 url = "https://www.marketbeat.com/stocks/NYSE/BAC/"
 browser.visit(url)
@@ -88,15 +132,37 @@ soup = bs(html, 'html.parser')
 bac_title = soup.find("h1", class_="PageTitleHOne").text
 bac = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
 
-print(bac_title)
-print(bac)
+# Empty list to hold financial data with stripped tags
+bac_nt =[]
 
+for data in jp:
+    
+    # Pull list elements 1 by 1 and put into string
+    data_str = str(data)
+    
+    # Put element string into beautiful soup object
+    b_soup = bs(data_str)
+    
+    # Strip html tag from list elements
+    data_text = b_soup.get_text()
+    
+    # Add data to list
+    bac_nt.append(data_text)
+
+# Zip fin_data list with stock data
+bac_zip = list(zip(fin_data,bac_nt))
+
+# Pull stock ticker from title string and strip blank spaces
 tick = (bac_title.split(':')[1])[0:3]
-tickers.append(tick.strip())
-print(tickers)
+tick.strip()
 
+# Add stock data to stock_dict with ticker as key and data as value
+stock_dict[tick] = bac_zip
+print(stock_dict)
+
+#----------------------------------------------------------------------
 # UBS
-
+#----------------------------------------------------------------------
 url = "https://www.marketbeat.com/stocks/NYSE/UBS/"
 browser.visit(url)
 
@@ -108,12 +174,37 @@ ubs = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
 print(ubs_title)
 print(ubs)
 
+# Empty list to hold financial data with stripped tags
+ubs_nt =[]
+
+for data in jp:
+    
+    # Pull list elements 1 by 1 and put into string
+    data_str = str(data)
+    
+    # Put element string into beautiful soup object
+    b_soup = bs(data_str)
+    
+    # Strip html tag from list elements
+    data_text = b_soup.get_text()
+    
+    # Add data to list
+    ubs_nt.append(data_text)
+
+# Zip fin_data list with stock data
+ubs_zip = list(zip(fin_data,ubs_nt))
+
+# Pull stock ticker from title string and strip blank spaces
 tick = (ubs_title.split(':')[1])[0:3]
-tickers.append(tick.strip())
-print(tickers)
+tick.strip()
 
+# Add stock data to stock_dict with ticker as key and data as value
+stock_dict[tick] = ubs_zip
+print(stock_dict)
+
+#----------------------------------------------------------------------
 # Wells Fargo
-
+#----------------------------------------------------------------------
 url = "https://www.marketbeat.com/stocks/NYSE/WFC/"
 browser.visit(url)
 
@@ -125,9 +216,31 @@ wf = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
 print(wf_title)
 print(wf)
 
+# Empty list to hold financial data with stripped tags
+wf_nt =[]
+
+for data in jp:
+    
+    # Pull list elements 1 by 1 and put into string
+    data_str = str(data)
+    
+    # Put element string into beautiful soup object
+    b_soup = bs(data_str)
+    
+    # Strip html tag from list elements
+    data_text = b_soup.get_text()
+    
+    # Add data to list
+    wf_nt.append(data_text)
+
+# Zip fin_data list with stock data
+wf_zip = list(zip(fin_data,wf_nt))
+
+# Pull stock ticker from title string and strip blank spaces
 tick = (wf_title.split(':')[1])[0:3]
-tickers.append(tick.strip())
-print(tickers)
+tick.strip()
 
-
+# Add stock data to stock_dict with ticker as key and data as value
+stock_dict[tick] = wf_zip
+print(stock_dict)
 
