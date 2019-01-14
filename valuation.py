@@ -18,52 +18,13 @@ from html.parser import HTMLParser
 #------------------------------------------------------
 # IMPORT STOCK DATA VARIABLES FROM SCRAPE.PY FILE
 #------------------------------------------------------
-from stock_scrape import gs,jp,bac,ubs,wf,soup,tickers
+from stock_scrape import stock_dict
 #------------------------------------------------------
 
-test1 = str(gs[0])
-#print(test1)
-
-soup1 = bs(test1)
-#soup1 = bs ('<strong>$176.93</strong>')
-print(soup1.get_text())
-
-# Create list of headings for financial data scraped in stock_scrape.py file
-fin_data = ['Price',
-            'Day Range',
-            '52W_Range',
-            'Volume',
-            'Average Volume',
-            'Market Cap',
-            'PE Ratio',
-            'Dividend Yield',
-            'Beta']
-
-# Create new dictionary which will use stock tickers as keys
-# Note - "tickers" is a list of stock tickers already created in 'stock_scrape' file
-stock_dict = dict.fromkeys(tickers,fin_data)
 print(stock_dict)
 
-# Create empty lists for financial data
-Price = []
-Day_Rng =[]
-Yr_Rng = []
-Vol = []
-Avg_Vol = []
-Market_Cap = []
-PE_Ratio = []
-Div_Yield = []
-Beta = []
-
-for tick in tickers:
-    print(tick)
-    
-
-for x in tickers:
-    data = bs(str(x))
-    Price.append(data)
-    
-
+stock_df = pd.DataFrame.from_dict(stock_dict)
+stock_df.head()
 
 #with open ('./Valuation_Guides/Valuation_Templates/Sample_Data.csv', newline='', encoding = 'utf-8') as csvfile:
 #    reader = csv.reader(csvfile)

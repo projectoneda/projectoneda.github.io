@@ -11,7 +11,8 @@ browser = Browser("chrome", **executable_path, headless=False)
 stock_dict = {}
 
 # Create list which contains headings for financial data to be scraped
-fin_data = ['Price',
+fin_data = ['Name',
+            'Price',
             'Day Range',
             '52W_Range',
             'Volume',
@@ -60,6 +61,11 @@ for data in gs:
     gs_nt.append(data_text)
     print(gs_nt)
 
+# Pull company name from title string,strip blank spaces and append beggining of fin data list
+gs_name = re.split(r'\bStock\b|:|- ',gs_title)[2]
+gs_nt.insert(0,gs_name.strip())
+print(gs_name)
+
 # Zip fin_data list with stock data
 gs_zip = list(zip(fin_data,gs_nt))
 print(gs_zip)
@@ -72,10 +78,6 @@ print(gs_nt)
 tick = (gs_title.split(':')[1])[0:3]
 tick.strip()
 print(tick)
-
-# Strip blank spaces from ticker and append ticker to "tickers" list
-#tickers.append(tick.strip())
-#print(tickers)
 
 # Add stock data to stock_dict with ticker as key and data as value
 stock_dict[tick] = gs_zip
@@ -109,6 +111,13 @@ for data in jp:
     # Add data to list
     jp_nt.append(data_text)
 
+# Pull company name from title string,strip blank spaces and append beggining of fin data list    
+jp_name = re.split(r'\bStock\b|:|- ',jp_title)[2]
+print(jp_name)
+
+jp_nt.insert(0,jp_name.strip())
+print(jp_nt)
+
 # Zip fin_data list with stock data
 jp_zip = list(zip(fin_data,jp_nt))
 
@@ -135,7 +144,7 @@ bac = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
 # Empty list to hold financial data with stripped tags
 bac_nt =[]
 
-for data in jp:
+for data in bac:
     
     # Pull list elements 1 by 1 and put into string
     data_str = str(data)
@@ -148,6 +157,10 @@ for data in jp:
     
     # Add data to list
     bac_nt.append(data_text)
+
+# Pull company name from title string,strip blank spaces and append beggining of fin data list    
+bac_name = re.split(r'\bStock\b|:|- ',bac_title)[2]
+bac_nt.insert(0,bac_name.strip())
 
 # Zip fin_data list with stock data
 bac_zip = list(zip(fin_data,bac_nt))
@@ -177,7 +190,7 @@ print(ubs)
 # Empty list to hold financial data with stripped tags
 ubs_nt =[]
 
-for data in jp:
+for data in ubs:
     
     # Pull list elements 1 by 1 and put into string
     data_str = str(data)
@@ -190,6 +203,10 @@ for data in jp:
     
     # Add data to list
     ubs_nt.append(data_text)
+
+# Pull company name from title string,strip blank spaces and append beggining of fin data list    
+ubs_name = re.split(r'\bStock\b|:|- ',ubs_title)[2]
+ubs_nt.insert(0,ubs_name.strip())
 
 # Zip fin_data list with stock data
 ubs_zip = list(zip(fin_data,ubs_nt))
@@ -219,7 +236,7 @@ print(wf)
 # Empty list to hold financial data with stripped tags
 wf_nt =[]
 
-for data in jp:
+for data in wf:
     
     # Pull list elements 1 by 1 and put into string
     data_str = str(data)
@@ -232,6 +249,10 @@ for data in jp:
     
     # Add data to list
     wf_nt.append(data_text)
+    
+# Pull company name from title string,strip blank spaces and append beggining of fin data list    
+wf_name = re.split(r'\bStock\b|:|- ',wf_title)[2]
+wf_nt.insert(0,wf_name.strip())
 
 # Zip fin_data list with stock data
 wf_zip = list(zip(fin_data,wf_nt))
