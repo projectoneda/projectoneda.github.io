@@ -28,8 +28,10 @@
 
 # Helpful Links
 
-* [Street of Walls - Investment Banking Technical Training - Comparables](http://www.streetofwalls.com/finance-training-courses/investment-banking-technical-training/comparable-company-analysis/)
-* [Corportate Finance Institute - Comps Table](https://corporatefinanceinstitute.com/resources/knowledge/valuation/comparable-company-analysis/)
+* [Street of Walls - Investment Banking Technical Training - Comparables with Example Calcs](http://www.streetofwalls.com/finance-training-courses/investment-banking-technical-training/comparable-company-analysis/)
+* Corporate Finance Institute(CFI)
+  * [Comps Table](https://corporatefinanceinstitute.com/resources/knowledge/valuation/comparable-company-analysis/)
+  * [Enterprise Value Summary (including nice visual)](https://corporatefinanceinstitute.com/resources/knowledge/valuation/what-is-enterprise-value-ev/)
 * [Macabus - Valuation Multiples Summary](http://macabacus.com/valuation/multiples)
 
 * [University of New Mexico - Valuation by Parts](http://www.unm.edu/~maj/Security%20Analysis/Valuation%20by%20parts.pdf)
