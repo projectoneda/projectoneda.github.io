@@ -1,0 +1,11 @@
+,GS ,JPM,BAC,UBS,WFC
+0,"('Name', 'Goldman Sachs Group')","('Name', 'JPMorgan Chase & Co.')","('Name', 'Bank of America')","('Name', 'UBS Group')","('Name', 'Wells Fargo & Co')"
+1,"('Price', '$176.93')","('Price', '$99.91')","('Price', '$26.03')","('Price', '$13.18')","('Price', '$47.87')"
+2,"('Day Range', '$172.42 - $177.04')","('Day Range', '$98.95 - $100.17')","('Day Range', '$25.46 - $26.04')","('Day Range', '$13.02 - $13.26')","('Day Range', '$47.18 - $48.09')"
+3,"('52W_Range', '$151.70 - $275.31')","('52W_Range', '$91.11 - $119.33')","('52W_Range', '$22.66 - $33.05')","('52W_Range', '$11.60 - $20.89')","('52W_Range', '$43.02 - $66.31')"
+4,"('Volume', '3.18 million shs')","('Volume', '15.40 million shs')","('Volume', '63.46 million shs')","('Volume', '2.16 million shs')","('Volume', '19.90 million shs')"
+5,"('Average Volume', '3.38 million shs')","('Average Volume', '15.25 million shs')","('Average Volume', '68.12 million shs')","('Average Volume', '2.81 million shs')","('Average Volume', '20.30 million shs')"
+6,"('Market Cap', '$65.64 billion')","('Market Cap', '$344.57 billion')","('Market Cap', '$263.88 billion')","('Market Cap', '$49.95 billion')","('Market Cap', '$233.16 billion')"
+7,"('PE Ratio', '8.95')","('PE Ratio', '14.54')","('PE Ratio', '14.22')","('PE Ratio', '12.32')","('PE Ratio', '11.65')"
+8,"('Dividend Yield', '1.81%')","('Dividend Yield', '3.19%')","('Dividend Yield', '2.33%')","('Dividend Yield', '5.32%')","('Dividend Yield', '3.60%')"
+9,"('Beta', '1.13')","('Beta', '1.15')","('Beta', '1.31')","('Beta', '1.22')","('Beta', '1.1')"

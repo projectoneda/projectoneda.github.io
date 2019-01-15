@@ -47,19 +47,19 @@ for data in gs:
     
     # Pull list elements 1 by 1 and put into string
     data_str = str(data)
-    # print(data_str)
+#     print(data_str)
     
     # Put element string into beautiful soup object
-    b_soup = bs(data_str)
-    # print(b_soup)
+    b_soup = bs(data_str, features="lxml")
+#     print(b_soup)
     
     # Strip html tag from list elements
     data_text = b_soup.get_text()
-    # print(data_text)
+#     print(data_text)
     
     # Add data to list
     gs_nt.append(data_text)
-    # print(gs_nt)
+#     print(gs_nt)
 
 # Pull company name from title string,strip blank spaces and append beggining of fin data list
 gs_name = re.split(r'\bStock\b|:|- ',gs_title)[2]
@@ -103,7 +103,7 @@ for data in jp:
     data_str = str(data)
     
     # Put element string into beautiful soup object
-    b_soup = bs(data_str)
+    b_soup = bs(data_str, features="lxml")
     
     # Strip html tag from list elements
     data_text = b_soup.get_text()
@@ -130,50 +130,6 @@ stock_dict[tick] = jp_nt
 # print(stock_dict)
 
 #----------------------------------------------------------------------
-# Bank of America
-#----------------------------------------------------------------------
-
-url = "https://www.marketbeat.com/stocks/NYSE/BAC/"
-browser.visit(url)
-
-html = browser.html
-soup = bs(html, 'html.parser')
-bac_title = soup.find("h1", class_="PageTitleHOne").text
-bac = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
-
-# Empty list to hold financial data with stripped tags
-bac_nt =[]
-
-for data in bac:
-    
-    # Pull list elements 1 by 1 and put into string
-    data_str = str(data)
-    
-    # Put element string into beautiful soup object
-    b_soup = bs(data_str)
-    
-    # Strip html tag from list elements
-    data_text = b_soup.get_text()
-    
-    # Add data to list
-    bac_nt.append(data_text)
-
-# Pull company name from title string,strip blank spaces and append beggining of fin data list    
-bac_name = re.split(r'\bStock\b|:|- ',bac_title)[2]
-bac_nt.insert(0,bac_name.strip())
-
-## Zip fin_data list with stock data
-#bac_zip = list(zip(fin_data,bac_nt))
-
-# Pull stock ticker from title string and strip blank spaces
-tick = (bac_title.split(':')[1])[0:3]
-tick.strip()
-
-# Add stock data to stock_dict with ticker as key and data as value
-stock_dict[tick] = bac_nt
-# print(stock_dict)
-
-#----------------------------------------------------------------------
 # UBS
 #----------------------------------------------------------------------
 url = "https://www.marketbeat.com/stocks/NYSE/UBS/"
@@ -196,7 +152,7 @@ for data in ubs:
     data_str = str(data)
     
     # Put element string into beautiful soup object
-    b_soup = bs(data_str)
+    b_soup = bs(data_str, features="lxml")
     
     # Strip html tag from list elements
     data_text = b_soup.get_text()
@@ -217,6 +173,50 @@ tick.strip()
 
 # Add stock data to stock_dict with ticker as key and data as value
 stock_dict[tick] = ubs_nt
+# print(stock_dict)
+
+#----------------------------------------------------------------------
+# Bank of America
+#----------------------------------------------------------------------
+
+url = "https://www.marketbeat.com/stocks/NYSE/BAC/"
+browser.visit(url)
+
+html = browser.html
+soup = bs(html, 'html.parser')
+bac_title = soup.find("h1", class_="PageTitleHOne").text
+bac = soup.find("div", class_="col-md-9 price-data-section").find_all('strong')
+
+# Empty list to hold financial data with stripped tags
+bac_nt =[]
+
+for data in bac:
+    
+    # Pull list elements 1 by 1 and put into string
+    data_str = str(data)
+    
+    # Put element string into beautiful soup object
+    b_soup = bs(data_str, features="lxml")
+    
+    # Strip html tag from list elements
+    data_text = b_soup.get_text()
+    
+    # Add data to list
+    bac_nt.append(data_text)
+
+# Pull company name from title string,strip blank spaces and append beggining of fin data list    
+bac_name = re.split(r'\bStock\b|:|- ',bac_title)[2]
+bac_nt.insert(0,bac_name.strip())
+
+## Zip fin_data list with stock data
+#bac_zip = list(zip(fin_data,bac_nt))
+
+# Pull stock ticker from title string and strip blank spaces
+tick = (bac_title.split(':')[1])[0:3]
+tick.strip()
+
+# Add stock data to stock_dict with ticker as key and data as value
+stock_dict[tick] = bac_nt
 # print(stock_dict)
 
 #----------------------------------------------------------------------
@@ -242,7 +242,7 @@ for data in wf:
     data_str = str(data)
     
     # Put element string into beautiful soup object
-    b_soup = bs(data_str)
+    b_soup = bs(data_str, features="lxml")
     
     # Strip html tag from list elements
     data_text = b_soup.get_text()
@@ -263,5 +263,4 @@ tick.strip()
 
 # Add stock data to stock_dict with ticker as key and data as value
 stock_dict[tick] = wf_nt
-print(stock_dict)
-
+# print(stock_dict)
