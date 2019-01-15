@@ -1,4 +1,122 @@
-<li>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stocks</title>
+    <link rel="stylesheet" href="presentation/styles.css">
+    </head>
+
+    <body>
+        <header>
+                <div class="container">
+                    <div id="branding">
+                        <h1>Wisdom Wealth Management</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="current"><a href="stocks.html">Stocks</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                    </ul>
+                </nav>
+                </div>
+        </header>
+
+        <section id="newsletter">
+            <div class="container">
+                <h1>Subscribe to Our Newsletter</h1>
+                    <form>
+                        <input type="email" placeholder="Enter Email...">
+                        <button type="submit" class="button-1">Subscribe</button>
+                        </form>
+            </div>
+        </section>
+
+        <section id="main">
+            <div class="container">
+                <article id=main-col>
+                    <h1 class="page-title">Sample Stocks of The Day</h1>
+                    <ul id=stocks>
+                       <li>
+                         <h3>{{ stock.GS[0] }}</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <p>
+
+      <ul style="list-style: none;">
+        <!-- <h1>{{ stock.GS[0] }}</h1> -->
+        <li><strong>Current Price:</strong>{{ stock.GS[1] }}</li>
+        <li><strong>PE:</strong>{{ stock.GS[3] }}</li>
+        <li><strong>EPS:</strong>{{ stock.GS[4] }}</li>
+        <li><strong>ROI:</strong>{{ stock.GS[5] }}</li>
+        <li><strong>Rating:</strong>{{ stock.GS[6] }}</li>
+        <li><strong>Industry Sector:</strong>{{ stock.GS[7] }}</li>
+        <li><strong>PE:</strong>{{ stock.GS[8] }}</li>
+        <li><strong>PE:</strong>{{ stock.GS[9] }}</li>
+        <li><strong>PE:</strong>{{ stock.GS[10] }}</li>
+      </ul>
+      <ul style="list-style: none;">
+        <h1>{{ stock.JPM[0] }}</h1>
+        <li>{{ stock.JPM[1] }}</li>
+        <li>{{ stock.JPM[3] }}</li>
+        <li>{{ stock.JPM[4] }}</li>
+        <li>{{ stock.JPM[5] }}</li>
+        <li>{{ stock.JPM[6] }}</li>
+        <li>{{ stock.JPM[7] }}</li>
+        <li>{{ stock.JPM[8] }}</li>
+        <li>{{ stock.JPM[9] }}</li>
+        <li>{{ stock.JPM[10] }}</li>
+      </ul>
+      <ul style="list-style: none;">
+        <h1>{{ stock.UBS[0] }}</h1>
+        <li>{{ stock.UBS[1] }}</li>
+        <li>{{ stock.UBS[3] }}</li>
+        <li>{{ stock.UBS[4] }}</li>
+        <li>{{ stock.UBS[5] }}</li>
+        <li>{{ stock.UBS[6] }}</li>
+        <li>{{ stock.UBS[7] }}</li>
+        <li>{{ stock.UBS[8] }}</li>
+        <li>{{ stock.UBS[9] }}</li>
+        <li>{{ stock.UBS[10] }}</li>
+      </ul>
+      <ul style="list-style: none;">
+        <h1>{{ stock.WFC[0] }}</h1>
+        <li>{{ stock.WFC[1] }}</li>
+        <li>{{ stock.WFC[3] }}</li>
+        <li>{{ stock.WFC[4] }}</li>
+        <li>{{ stock.WFC[5] }}</li>
+        <li>{{ stock.WFC[6] }}</li>
+        <li>{{ stock.WFC[7] }}</li>
+        <li>{{ stock.WFC[8] }}</li>
+        <li>{{ stock.WFC[9] }}</li>
+        <li>{{ stock.WFC[10] }}</li>
+      </ul>
+      <ul style="list-style: none;">
+        <h1>{{ stock.BAC[0] }}</h1>
+        <li>{{ stock.BAC[1] }}</li>
+        <li>{{ stock.BAC[3] }}</li>
+        <li>{{ stock.BAC[4] }}</li>
+        <li>{{ stock.BAC[5] }}</li>
+        <li>{{ stock.BAC[6] }}</li>
+        <li>{{ stock.BAC[7] }}</li>
+        <li>{{ stock.BAC[8] }}</li>
+        <li>{{ stock.BAC[9] }}</li>
+        <li>{{ stock.BAC[10] }}</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <li>
    <h3>J.P. Morgan Chase & Co.</h3>
    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
    <p>
@@ -17,9 +135,9 @@
 
 {% for stock in stocks %}
 
-<li>
-   <h3>{{ stock.Name }}</h3>
-   <!-- <p>{{ stock.description }}</p> -->
+ <li> -->
+   <!-- <h3>{{ stock.GS }}</h3> --> 
+   <!-- <p>{{ stock.description }}</p>
    <p>
        <ul>
            <li class="emph"><strong>Current Price:</strong> {{ stock.price }}</li>
@@ -30,6 +148,6 @@
            <li><strong>Industry Sector:</strong> Financials</li>
            <li class="emph"><a href="#" class="button-1">Learn More</a></li>
        </ul>
-   </p>
-<li>
-{% endfor %}
+   </p> -->
+<!-- <li>
+{% endfor %} --> 
