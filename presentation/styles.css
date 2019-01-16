@@ -249,6 +249,9 @@ footer{
 @media(max-width: 768px){
     header #branding,
     .container,
+    .content,
+    .title,
+    .text
     header nav,
     .col,
     header nav li,
