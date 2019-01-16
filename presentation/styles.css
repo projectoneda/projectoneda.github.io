@@ -277,16 +277,16 @@ footer{
     }
     /* Small Screens */
 @media (max-width: 768px) {
-    .showcase::after {
+    #showcase::after {
       height: 100%;
     }
   
-    .content {
+    #content {
       top: 5%;
       margin-top: 5px;
     }
   
-    .content .text {
+    #content #text {
       display: none;
     }
   
