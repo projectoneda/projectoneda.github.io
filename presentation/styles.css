@@ -83,7 +83,7 @@ header a:hover{
 .showcase::after {
     content: '';
     min-height:700px;
-    width: 100%;
+    width: auto;
     background-image: url(showcase.png);
     background-size: cover;
     background-repeat: no-repeat;
