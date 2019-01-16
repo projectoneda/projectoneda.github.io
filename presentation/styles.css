@@ -275,18 +275,4 @@ footer{
         margin-bottom: 5px;
 
     }
-    #showcase::after {
-        height: 100%;
-      }
-    
-      #content {
-        top: 5%;
-        margin-top: 5px;
-      }
-    
-      #content #text {
-        display: none;
-      }
-    
-  }
-   
+ 
