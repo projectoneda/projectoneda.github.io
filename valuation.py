@@ -103,23 +103,24 @@ stock_data_df.loc[
                   stock_data_df.Price > stock_data_df.Target,
                   'Reccomendation'] = 'SELL'
 
+stock_data_df = stock_data_df.set_index('Ticker')
 stock_data_df.head()
 
 # ------------------------------------------------------------------------------
 # PLACE STOCK DATA INTO VARIABLES TO LOAD INTO STOCKS.HTML (VIA APP.PY)     
 # ------------------------------------------------------------------------------
 fin_dict = stock_data_df.to_dict()
-print(fin_dict)
+print(fin_dict['Name']['GS'])
 
-print(fin_dict['Ticker'].values())
+#print(fin_dict['Ticker'].values())
 
-for key, value in fin_dict['Ticker'].items():
-    print(value)
-    
-for tick in stock_data_df['Ticker']:
-    print(tick)
-
-print(stock_data_df['Ticker'][0])   
+#for key, value in fin_dict['Ticker'].items():
+#    print(value)
+#    
+#for tick in stock_data_df['Ticker']:
+#    print(tick)
+#
+#print(stock_data_df['Ticker'][0])   
     
     
     

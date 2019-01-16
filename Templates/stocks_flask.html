@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Wisdom Wealth Management | Stocks</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://projectoneda.github.io/presentation/styles.css">
     </head>
     
     <body>
@@ -16,10 +16,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="current"><a href="stocks.html">Stocks</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="https://projectoneda.github.io/presentation/index.html">Home</a></li>
+                        <li><a href="https://projectoneda.github.io/presentation/about.html">About</a></li>
+                        <li><a href="https://projectoneda.github.io/presentation/stocks.html">Stocks</a></li>
+                        <li><a class="current"><a href="http://127.0.0.1:5000/">Flask</a></li>
+                        <li><a href="https://projectoneda.github.io/presentation/services.html">Services</a></li>
                     </ul>
                 </nav>
             </div> 
@@ -41,75 +42,75 @@
                     <h1 class="page-title">Sample Stocks of The Day</h1>
                     <ul id=stocks>
                         <li>
-                            <h3>J.P. Morgan Chase & Co.</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <h3>{{stocks.JPM}}</h3>
+                            
                             <p>
                                 <ul>
-                                    <li class="emph"><strong>Current Price:</strong> $101.35</li>
-                                    <li><strong>PE:</strong> 12.58</li>
-                                    <li><strong>EPS:</strong> $8.06</li>
-                                    <li><strong>ROI:</strong> 18.47%</li>
-                                    <li><strong>Rating:</strong> Buy</li>
-                                    <li><strong>Industry Sector:</strong> Financials</li>
+                                    <li class="emph"><strong>Current Price:</strong> {{price.JPM}}</li>
+                                    <li><strong>PE:</strong> {{pe.JPM}}</li>
+                                    <li><strong>EPS:</strong> {{eps.JPM}}</li>
+                                    <li><strong>ROI:</strong> {{pyield.JPM}}</li>
+                                    <li><strong>Rating:</strong> {{recc.JPM}}</li>
+                                    <li><strong>Industry Sector:</strong>Financials</li>
                                     <li class="emph"><a href="#" class="button-1">Learn More</a></li>
                                 </ul>
                             </p>
                         <li>
-                            <h3>The Goldman Sachs Group, Inc.</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <h3>{{stocks.GS}}</h3>
+                            
                             <p>
                                 <ul>
-                                    <li class="emph"><strong>Current Price:</strong> $178.48</li>
-                                    <li><strong>PE:</strong> 13.01</li>
-                                    <li><strong>EPS:</strong> $13.71</li>
-                                    <li><strong>ROI:</strong> 29.62</li>
-                                    <li><strong>Rating:</strong> Strong Buy</li>
-                                    <li><strong>Industry Sector:</strong> Financials</li>
+                                    <li class="emph"><strong>Current Price:</strong> {{price.GS}}</li>
+                                    <li><strong>PE:</strong> {{pe.GS}}</li>
+                                    <li><strong>EPS:</strong> {{eps.GS}}</li>
+                                    <li><strong>ROI:</strong> {{pyield.GS}}</li>
+                                    <li><strong>Rating:</strong> {{recc.GS}}</li>
+                                    <li><strong>Industry Sector:</strong>Financials</li>
                                     <li class="emph"><a href="#" class="button-1">Learn More</a></li>
                                 </ul>
                             </p>
                         </li>
                         <li>
-                            <h3>The Bank of America Corporation</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <h3>{{stocks.BAC}}</h3>
+                            
                             <p>
                                 <ul>
-                                    <li class="emph"><strong>Current Price:</strong> $26.55</li>
-                                    <li><strong>PE:</strong> 12.66</li>
-                                    <li><strong>EPS:</strong> $2.096</li>
-                                    <li><strong>ROI:</strong> 20.05%</li>
-                                    <li><strong>Rating:</strong> Buy</li>
-                                    <li><strong>Industry Sector:</strong> Financials</li>
+                                    <li class="emph"><strong>Current Price:</strong> {{price.BAC}}</li>
+                                    <li><strong>PE:</strong> {{pe.BAC}}</li>
+                                    <li><strong>EPS:</strong> {{eps.BAC}}</li>
+                                    <li><strong>ROI:</strong> {{pyield.BAC}}</li>
+                                    <li><strong>Rating:</strong> {{recc.BAC}}</li>
+                                    <li><strong>Industry Sector:</strong>Financials</li>
                                     <li class="emph"><a href="#" class="button-1">Learn More</a></li>
                                 </ul> 
                             </p>
                         </li>
                         <li>
-                            <h3>UBS Group AG</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <h3>{{stocks.UBS}}</h3>
+                            
                             <p>
                                 <ul>
-                                    <li class="emph"><strong>Current Price:</strong> $13.21</li>
-                                    <li><strong>PE:</strong> 29.55</li>
-                                    <li><strong>EPS:</strong> $0.45</li>
-                                    <li><strong>ROI:</strong> 29.60%</li>
-                                    <li><strong>Rating:</strong> Strong Buy</li>
-                                    <li><strong>Industry Sector:</strong> Financials</li>
+                                    <li class="emph"><strong>Current Price:</strong> {{price.UBS}}</li>
+                                    <li><strong>PE:</strong> {{pe.UBS}}</li>
+                                    <li><strong>EPS:</strong> {{eps.UBS}}</li>
+                                    <li><strong>ROI:</strong> {{pyield.UBS}}</li>
+                                    <li><strong>Rating:</strong> {{recc.UBS}}</li>
+                                    <li><strong>Industry Sector:</strong>Financials</li>
                                     <li class="emph"><a href="#" class="button-1">Learn More</a></li>
                                 </ul>
                             </p>
                         </li>
                         <li>
-                            <h3>Wells Fargo & Company</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                            <h3>{{stocks.WFC}}</h3>
+                            
                             <p>
                                 <ul>
-                                    <li class="emph"><strong>Current Price:</strong> $45.57</li>
-                                    <li><strong>PE:</strong> 11.23</li>
-                                    <li><strong>EPS:</strong> $4.234</li>
-                                    <li><strong>ROI:</strong> 21.83%</li>
-                                    <li><strong>Rating:</strong> Buy</li>
-                                    <li><strong>Industry Sector:</strong> Financials</li>
+                                    <li class="emph"><strong>Current Price:</strong> {{price.WFC}}</li>
+                                    <li><strong>PE:</strong> {{pe.WFC}}</li>
+                                    <li><strong>EPS:</strong> {{eps.WFC}}</li>
+                                    <li><strong>ROI:</strong> {{pyield.WFC}}</li>
+                                    <li><strong>Rating:</strong> {{recc.WFC}}</li>
+                                    <li><strong>Industry Sector:</strong>Financials</li>
                                     <li class="emph"><a href="#" class="button-1">Learn More</a></li>
                                 </ul>
                             </p>
